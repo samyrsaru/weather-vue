@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, defineProps, computed, watch, watchEffect } from 'vue'
+import { ref, watchEffect } from 'vue'
 
 const props = defineProps(['cityName'])
 // const cityName = computed(() => props.cityName);
