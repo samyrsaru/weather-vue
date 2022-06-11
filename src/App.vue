@@ -7,9 +7,9 @@ const cityName = ref("Bucharest, RO");
 </script>
 
 <template>
-  <header class="flex items-center justify-between gap-4 p-5">
-    <span class="text-5xl">&#127774;</span>
-    <span class="text-5xl">VueWeather</span>
+  <header class="flex items-center justify-between gap-2 p-5">
+    <span class="text-4xl">&#127774;</span>
+    <span class="text-4xl hidden md:block">VueWeather</span>
     <span class="flex-grow"></span>
     <div class="flex items-center justify-center gap-2">
       <input id="cityName"
@@ -29,11 +29,11 @@ const cityName = ref("Bucharest, RO");
     <span class="text-9xl">&#9729;</span>
     <span class="text-9xl">&#9788;</span>
     <img alt="Vue logo" class="p-3" src="@/assets/logo.svg" width="125" height="125" />
-    -->
     <nav class="flex gap-2">
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/about">About</RouterLink>
     </nav>
+    -->
   </header>
 
   <RouterView />
@@ -43,9 +43,6 @@ const cityName = ref("Bucharest, RO");
 @import '@/assets/base.css';
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  font-weight: normal;
 }
 
 </style>

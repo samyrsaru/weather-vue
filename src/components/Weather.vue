@@ -61,19 +61,19 @@ watchEffect(() => fetchWeather());
                     </p>
                 </div>
                 <div v-for="value in weatherData.list"
-                    class="grid grid-cols-6 items-center place-content-center mb-4
+                    class="grid grid-cols-3 md:grid-cols-5 mb-4 place-items-center
                         bg-gray-800 px-4 py-2
                         border-l-gray-500 border-l-4
                     "
                 >
-                    <p>{{
+                    <p class="place-self-start self-center">{{
                             new Date(value.dt_txt).getDate() + " (" +
                             getDayOfWeek(new Date(value.dt_txt).getDay()) + ")  " +
                             (new Date(value.dt_txt).getHours() + "").padStart(2, "0")
                         }}
                     </p>
-                    <span class="flex items-center text-2xl gap-0 col-span-2">
-                        <img v-bind:src="`https://openweathermap.org/img/wn/${value.weather[0].icon}@2x.png`"/>
+                    <span class="flex items-center text-xl">
+                        <img v-if="true" v-bind:src="`https://openweathermap.org/img/wn/${value.weather[0].icon}.png`"/>
                         <span class="">{{Math.floor(value.main.temp)}}°</span>
                     </span>
                     <span class="flex items-center gap-1">
@@ -82,6 +82,7 @@ watchEffect(() => fetchWeather());
                         </svg> 
                         {{Math.floor(value.main.humidity)}}%
                     </span>
+                    <span class="block md:hidden"></span>
                     <span>&#9748; {{Math.floor(value.pop * 100)}}%</span>
                     <span>{{value.weather[0].description}}</span>
                 </div>
