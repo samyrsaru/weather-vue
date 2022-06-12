@@ -10,7 +10,7 @@ const weatherData = ref(null);
 const fetchWeather = () => {
     console.log("fetchWeather", props, props.cityName, props.cityName);
     if (!props.cityName) return;
-    const [city, country] = props.cityName.toLowerCase().split(',').map(word => word.trim());
+    const [city, country] = props.cityName.toLowerCase().split(',').map((word: string) => word.trim());
     if (!city) return;
 
     console.log("fetchWeather ---");
@@ -18,7 +18,7 @@ const fetchWeather = () => {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '202c8b39b2msh36c251a5db0894ep11c028jsn65d4f3ccce12',
+            'X-RapidAPI-Key': import.meta.env.VITE_RAPID_API_KEY,
             'X-RapidAPI-Host': 'community-open-weather-map.p.rapidapi.com'
         }
     };
